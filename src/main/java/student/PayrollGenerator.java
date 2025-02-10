@@ -69,7 +69,39 @@ public final class PayrollGenerator {
         // as it is invalid, but if is 0, you still generate a paystub, but the amount is 0.
 
         //YOUR CODE HERE
-      
+        // Reset YTD earnings and taxes for each employee before processing payroll
+        for (IEmployee employee : employees) {
+            if (employee instanceof HourlyEmployee) {
+                ((HourlyEmployee) employee).restoreOriginalYtdValues();
+            } else if (employee instanceof SalaryEmployee) {
+                ((SalaryEmployee) employee).restoreOriginalYtdValues();
+            }
+        }
+        // Process payroll for each employee
+        for (ITimeCard timeCard : timeCardList) {
+            String empID = timeCard.getEmployeeID();
+            double hoursWorked = timeCard.getHoursWorked();
+
+            // Find the matching employee by ID
+            for (IEmployee employee : employees) {
+                if (employee.getID().equals(empID)) {
+                    if (hoursWorked < 0) { // Skip if negative hours
+                        System.out.println("Skipping payroll for " + empID + " due to negative hours.");
+                        break;
+                    }
+
+                    // Process payroll using the runPayroll method
+                    IPayStub payStub = employee.runPayroll(hoursWorked);
+
+                    // Check if payroll was successfully processed
+                    if (payStub != null) {
+                        payStubs.add(payStub);
+                    }
+
+                    break; // Employee found, stop searching
+                }
+            }
+        }
 
          // now save out employees to a new file
 
