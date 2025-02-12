@@ -160,7 +160,7 @@ public class SalaryEmployee implements IEmployee {
     }
 
     /**
-     * Restore original YTD values
+     * Restore original YTD values.
      */
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:MissingJavadocMethod"})
     public void restoreOriginalYtdValues() {

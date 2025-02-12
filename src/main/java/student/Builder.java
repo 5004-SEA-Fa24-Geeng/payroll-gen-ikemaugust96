@@ -20,11 +20,13 @@ public final class Builder {
     }
 
     /**
-     * list from cvs
+     * Reads employee data from a CSV file and creates a list of employees.
+     *
+     * @param employeesFilePath the path to the CSV file containing employee data
+     * @return a list of IEmployee objects parsed from the file
      */
     @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
-    public static List<IEmployee>
-    buildEmployeesFromCSV(Path employeesFilePath) {
+    public static List<IEmployee> buildEmployeesFromCSV(Path employeesFilePath) {
         return new ArrayList<>();
     }
 
@@ -32,13 +34,10 @@ public final class Builder {
      * Builds an employee object from a CSV string.
      * You may end up checking the type of employee (hourly or salary) by looking at the first
      * element of the CSV string. Then building an object specific to that type.
-     * * @param csv A comma-separated string containing employee data.
-     * <p>
-     * * @return An IEmployee object representing the employee.
+     *
+     * @param csv A comma-separated string containing employee data.
+     * @return An IEmployee object representing the employee.
      */
-    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength",
-            "checkstyle:AbbreviationAsWordInName",
-            "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:CommentsIndentation"})
     public static IEmployee buildEmployeeFromCSV(String csv) {
 
         // Split CSV by commas

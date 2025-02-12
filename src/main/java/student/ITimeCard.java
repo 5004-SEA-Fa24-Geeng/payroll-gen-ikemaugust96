@@ -36,11 +36,11 @@ public interface ITimeCard {
     @SuppressWarnings("checkstyle:SummaryJavadoc")
     class TimeCard implements ITimeCard { // Implements ITimeCard
         /**
-         * id of employee
+         * id of employee.
          */
         private final String employeeID;
         /**
-         * working length of employee by hour
+         * working length of employee by hour.
          */
         private final double hoursWorked;
 

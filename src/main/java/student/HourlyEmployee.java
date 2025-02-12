@@ -63,7 +63,9 @@ public class HourlyEmployee implements IEmployee, IPayStub {
     private final double originalYtdTaxesPaid;
 
     /**
-     * The re-set original year-to-date earning.
+     * Sets the year-to-date earnings for the employee.
+     *
+     * @param earnings the updated year-to-date earnings
      */
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:AbbreviationAsWordInName"})
     public void setYTDEarnings(double earnings) {
@@ -71,7 +73,9 @@ public class HourlyEmployee implements IEmployee, IPayStub {
     }
 
     /**
-     * The re-set original year-to-date tax payment.
+     * Sets the year-to-date taxes paid by the employee.
+     *
+     * @param taxesPaid the updated year-to-date taxes paid
      */
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:AbbreviationAsWordInName"})
     public void setYTDTaxesPaid(double taxesPaid) {
@@ -172,9 +176,10 @@ public class HourlyEmployee implements IEmployee, IPayStub {
                 .setScale(2, RoundingMode.HALF_UP);
         BigDecimal netPay = taxable.subtract(taxes);
 
-
-        // Accumulate YTD values once per payroll cycle
-        // Accumulate YTD earnings and taxes
+        /**Accumulate YTD values once per payroll cycle.
+         *
+         * Accumulate YTD earnings and taxes
+         */
         this.ytdEarnings = originalYtdEarnings + netPay.doubleValue();
         this.ytdTaxesPaid = originalYtdTaxesPaid + taxes.doubleValue();
 
@@ -188,7 +193,9 @@ public class HourlyEmployee implements IEmployee, IPayStub {
         );
     }
 
-    // Method to restore original YTD values
+    /**
+     * Method to restore original YTD values.
+     */
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:MissingJavadocMethod"})
     public void restoreOriginalYtdValues() {
         this.ytdEarnings = this.originalYtdEarnings;
