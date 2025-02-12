@@ -93,7 +93,7 @@ public class HourlyEmployee implements IEmployee, IPayStub {
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:NeedBraces"})
     @Override
     public IPayStub runPayroll(double hoursWorked) {
-        if (hoursWorked < 0) {
+        if (hoursWorked <= 0) {
             throw new IllegalStateException("Hours worked cannot be negative.");
         }
 
