@@ -68,21 +68,27 @@ public final class Builder {
      */
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:AbbreviationAsWordInName", "checkstyle:CommentsIndentation"})
     public static ITimeCard buildTimeCardFromCSV(String csv) {
+        System.out.println(" Parsing Time Card CSV: " + csv);
 
-        // Split CSV into an array of strings
         String[] parts = csv.split(",");
 
-        // Validate correct number of fields in CSV
         if (parts.length != 2) {
-            throw new IllegalArgumentException("Invalid time card CSV format: " + csv);
+            throw new IllegalArgumentException(" ERROR: Invalid time card CSV format: " + csv);
         }
         try {
             String employeeID = parts[0].trim();
-            double hoursWorked = Double.parseDouble(parts[1]);
-            // Create a new TimeCard object
+            double hoursWorked = Double.parseDouble(parts[1].trim());
+
+            System.out.println("Time Card Parsed - ID: " + employeeID + ", Hours: " + hoursWorked);
+
+            // 🚨 STOP execution if negative hours exist
+            if (hoursWorked < 0) {
+                throw new IllegalArgumentException(" ERROR: Negative hours detected for Employee ID " + employeeID);
+            }
+
             return new ITimeCard.TimeCard(employeeID, hoursWorked);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Invalid number format in TimeCard CSV: " + csv, e);
+            throw new IllegalArgumentException("ERROR: Invalid number format in TimeCard CSV: " + csv, e);
         }
     }
 }
