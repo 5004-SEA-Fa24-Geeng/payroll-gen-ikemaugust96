@@ -101,7 +101,7 @@ public final class PayrollGenerator {
             // Find the matching employee by ID
             for (IEmployee employee : employees) {
                 if (employee.getID().equals(empID)) {
-                    if (hoursWorked <= 0) { // Skip if negative hours
+                    if (hoursWorked < 0) { // Skip if negative hours
                         System.out.println("Skipping payroll for " + empID + " due to negative hours.");
                         break;
                     }
