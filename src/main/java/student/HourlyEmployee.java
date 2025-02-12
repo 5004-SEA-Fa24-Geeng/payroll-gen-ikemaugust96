@@ -190,7 +190,8 @@ public class HourlyEmployee implements IEmployee, IPayStub {
     /**
      * Formats numerical values for CSV output.
      *
-     * <p>Ensures whole numbers retain one decimal place, while other numbers maintain their full precision.</p>
+     * <p>Ensures whole numbers retain one decimal
+     * place, while other numbers maintain their full precision.</p>
      *
      * @param value the {@code BigDecimal} value to format
      * @return a properly formatted string representation of the number
