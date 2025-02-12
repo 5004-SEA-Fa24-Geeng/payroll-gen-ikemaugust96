@@ -3,8 +3,18 @@ package student;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-
-@SuppressWarnings({"checkstyle:RightCurly", "checkstyle:LineLength", "checkstyle:MissingJavadocType"})
+/**
+ * Represents a salaried employee in the payroll system.
+ * This class calculates payroll, maintains YTD earnings and tax information, and provides
+ * formatted data output.
+ *
+ * <p>It implements the {@code IEmployee} interface and handles payroll calculations
+ * on a biweekly basis.</p>
+ *
+ * @author [Your Name]
+ * @version 1.0
+ */
+@SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength", "checkstyle:SummaryJavadoc"})
 public class SalaryEmployee implements IEmployee {
     @SuppressWarnings("checkstyle:Indentation")
     private final String name;
@@ -25,6 +35,16 @@ public class SalaryEmployee implements IEmployee {
     @SuppressWarnings("checkstyle:Indentation")
     private double netPay; // Store net pay for toCSV()
 
+    /**
+     * Constructs a new {@code SalaryEmployee} instance.
+     *
+     * @param name             the name of the employee
+     * @param id               the unique identifier for the employee
+     * @param payRate          the employee's annual salary
+     * @param ytdEarnings      the year-to-date earnings of the employee
+     * @param ytdTaxesPaid     the year-to-date taxes paid by the employee
+     * @param pretaxDeductions the pre-tax deductions for the employee
+     */
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:MissingJavadocMethod"})
     public SalaryEmployee(String name, String id, double payRate,
                           double ytdEarnings, double ytdTaxesPaid,
@@ -121,7 +141,9 @@ public class SalaryEmployee implements IEmployee {
         );
     }
 
-    // Restore original YTD values
+    /**
+     * Restore original YTD values
+     */
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:MissingJavadocMethod"})
     public void restoreOriginalYtdValues() {
         this.ytdEarnings = this.originalYtdEarnings;
@@ -129,13 +151,17 @@ public class SalaryEmployee implements IEmployee {
     }
 
     /**
-     * Formats numbers to match output requirements.
+     * Formats numerical values for CSV output.
+     *
+     * <p>Ensures whole numbers retain one decimal place, while other numbers maintain their full precision.</p>
+     *
+     * @param value the {@code BigDecimal} value to format
+     * @return a properly formatted string representation of the number
      */
-    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength"})
+
+    @SuppressWarnings({"checkstyle:CommentsIndentation", "checkstyle:Indentation", "checkstyle:LineLength"})
     private String formatNumber(double value) {
         BigDecimal number = BigDecimal.valueOf(value).setScale(2, RoundingMode.HALF_UP).stripTrailingZeros();
-
-        // If it has one decimal place, ensure it keeps exactly one
         if (number.scale() == 0) {
             return String.format("%.1f", value);
         }

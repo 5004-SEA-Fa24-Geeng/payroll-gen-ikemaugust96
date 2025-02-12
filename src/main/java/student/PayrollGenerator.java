@@ -54,7 +54,8 @@ public final class PayrollGenerator {
      *
      * @param args command line arguments
      */
-    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength", "checkstyle:AbbreviationAsWordInName", "checkstyle:CommentsIndentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
+    @SuppressWarnings({"checkstyle:Indentation",
+            "checkstyle:LineLength", "checkstyle:AbbreviationAsWordInName", "checkstyle:CommentsIndentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
     public static void main(String[] args) {
         Arguments arguments = Arguments.process(args); // leave this, and make sure you use it on
         // reading/writing files!
@@ -164,7 +165,8 @@ public final class PayrollGenerator {
          *
          * @see #process(String[])
          */
-        @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:LineLength"})
+        @SuppressWarnings({"checkstyle:Indentation",
+                "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:LineLength"})
         private Arguments() {
 
         }
@@ -174,7 +176,8 @@ public final class PayrollGenerator {
          *
          * @return the name of the employee file
          */
-        @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:LineLength"})
+        @SuppressWarnings({"checkstyle:Indentation",
+                "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:LineLength"})
         public String getEmployeeFile() {
             return employeeFile;
         }
@@ -184,7 +187,8 @@ public final class PayrollGenerator {
          *
          * @return the name of the payroll file
          */
-        @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:LineLength"})
+        @SuppressWarnings({"checkstyle:Indentation",
+                "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:LineLength"})
         public String getPayrollFile() {
             return payrollFile;
         }
@@ -194,7 +198,8 @@ public final class PayrollGenerator {
          *
          * @return the name of the time card file
          */
-        @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:LineLength"})
+        @SuppressWarnings({"checkstyle:Indentation",
+                "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:LineLength"})
         public String getTimeCards() {
             return timeCards;
         }
@@ -222,7 +227,8 @@ public final class PayrollGenerator {
          * @param args the arguments
          * @return an Argument object with file names added
          */
-        @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
+        @SuppressWarnings({"checkstyle:Indentation",
+                "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
         public static Arguments process(String[] args) {
             Arguments arguments = new Arguments();
             for (int i = 0; i < args.length; i++) {

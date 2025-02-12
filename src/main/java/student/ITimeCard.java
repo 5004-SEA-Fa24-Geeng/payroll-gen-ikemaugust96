@@ -13,7 +13,8 @@ public interface ITimeCard {
      *
      * @return the employee ID
      */
-    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
+    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:Indentation",
+            "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
     String getEmployeeID();
 
     /**
@@ -32,8 +33,7 @@ public interface ITimeCard {
      * By nesting this class inside the interface, we ensure that an implementation
      * is always available without needing a separate file.
      */
-    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:EmptyLineSeparator", "checkstyle:JavadocParagraph"})
-    public static class TimeCard implements ITimeCard { // Implements ITimeCard
+    class TimeCard implements ITimeCard { // Implements ITimeCard
         @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:Indentation"})
         private final String employeeID;
         @SuppressWarnings("checkstyle:Indentation")
@@ -79,8 +79,8 @@ public interface ITimeCard {
 
         /**
          * Converts the TimeCard object into a formatted CSV string.
-         * <p>
-         * The format follows: "employeeID,hoursWorked"
+         *
+         * <p>The format follows: "employeeID,hoursWorked"
          *
          * @return a string representing the time card details in CSV format.
          */

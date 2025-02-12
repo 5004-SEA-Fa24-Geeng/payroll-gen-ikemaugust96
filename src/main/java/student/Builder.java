@@ -10,7 +10,8 @@ import java.util.List;
  * with the objects themselves and the concept of a factory, but we placed
  * them here to keep the code clean (and to help guide you).
  */
-@SuppressWarnings({"checkstyle:Indentation", "checkstyle:CommentsIndentation", "checkstyle:LineLength", "checkstyle:JavadocParagraph"})
+@SuppressWarnings({"checkstyle:Indentation",
+        "checkstyle:CommentsIndentation", "checkstyle:LineLength", "checkstyle:JavadocParagraph"})
 public final class Builder {
 
 
@@ -18,11 +19,12 @@ public final class Builder {
     private Builder() {
     }
 
-    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:AbbreviationAsWordInName", "checkstyle:MissingJavadocMethod"})
-    public static List<IEmployee> buildEmployeesFromCSV(Path employeesFilePath) {
-        // Implement logic to read employees from CSV and add them to the list.
-        // For example:
-        // Read the file, parse the CSV, and create IEmployee objects.
+    @SuppressWarnings({"checkstyle:Indentation",
+            "checkstyle:AbbreviationAsWordInName", "checkstyle:MissingJavadocMethod"})
+
+
+    public static List<IEmployee>
+    buildEmployeesFromCSV(Path employeesFilePath) {
         return new ArrayList<>();
     }
 
@@ -32,9 +34,11 @@ public final class Builder {
      * element of the CSV string. Then building an object specific to that type.
      *
      * @param csv the CSV string
-     *            * @return the employee object
+     * @return the employee object
      */
-    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength", "checkstyle:AbbreviationAsWordInName", "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:CommentsIndentation"})
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength",
+            "checkstyle:AbbreviationAsWordInName",
+            "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:CommentsIndentation"})
     public static IEmployee buildEmployeeFromCSV(String csv) {
 
         // Split CSV by commas
@@ -66,7 +70,8 @@ public final class Builder {
      * @param csv csv string
      * @return a TimeCard object
      */
-    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:AbbreviationAsWordInName", "checkstyle:CommentsIndentation"})
+    @SuppressWarnings({"checkstyle:Indentation",
+            "checkstyle:AbbreviationAsWordInName", "checkstyle:CommentsIndentation"})
     public static ITimeCard buildTimeCardFromCSV(String csv) {
         System.out.println("🔍 Parsing Time Card CSV: " + csv);
 

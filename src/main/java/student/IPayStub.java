@@ -29,9 +29,10 @@ public interface IPayStub {
      *
      * <p>Format of the CSV string is: "employee_name,net_pay,taxes,ytd_earnings,ytd_taxes_paid"
      *
-     * <p></p>@return the CSV string
+     * @return the CSV string
      */
-    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:Indentation", "checkstyle:JavadocParagraph"})
+    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName",
+            "checkstyle:Indentation", "checkstyle:JavadocParagraph"})
     String toCSV();
 
 }

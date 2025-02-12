@@ -3,7 +3,18 @@ package student;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-@SuppressWarnings({"checkstyle:Indentation", "checkstyle:MissingJavadocType"})
+/**
+ * Represents an hourly employee in the payroll system.
+ * This class calculates payroll, maintains YTD earnings and tax information, and provides
+ * formatted data output.
+ *
+ * <p>It implements the {@code IEmployee} interface and handles payroll calculations
+ * based on hourly wages and overtime.</p>
+ *
+ * @author [Your Name]
+ * @version 1.0
+ */
+@SuppressWarnings("checkstyle:Indentation")
 public class HourlyEmployee implements IEmployee, IPayStub {
     @SuppressWarnings("checkstyle:Indentation")
     private final String name;
@@ -34,7 +45,17 @@ public class HourlyEmployee implements IEmployee, IPayStub {
         this.ytdTaxesPaid = taxesPaid;
     }
 
-    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:EmptyLineSeparator", "checkstyle:MissingJavadocMethod"})
+    /**
+     * Constructs a new {@code HourlyEmployee} instance.
+     *
+     * @param name             the name of the employee
+     * @param id               the unique identifier for the employee
+     * @param payRate          the employee's hourly pay rate
+     * @param ytdEarnings      the year-to-date earnings of the employee
+     * @param ytdTaxesPaid     the year-to-date taxes paid by the employee
+     * @param pretaxDeductions the pre-tax deductions for the employee
+     */
+    @SuppressWarnings("checkstyle:Indentation")
     public HourlyEmployee(String name, String id, double payRate,
                           double ytdEarnings, double ytdTaxesPaid,
                           double pretaxDeductions) {
@@ -90,13 +111,17 @@ public class HourlyEmployee implements IEmployee, IPayStub {
         return pretaxDeductions;
     }
 
-    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:NeedBraces"})
+    /**
+     * Runs payroll for the hourly employee, calculating net pay, taxes, and updating YTD values.
+     *
+     * @param hoursWorked the number of hours worked in the pay period
+     * @return a new {@code PayStub} representing the payroll data for this pay period
+     */
     @Override
     public IPayStub runPayroll(double hoursWorked) {
         if (hoursWorked < 0) {
             throw new IllegalStateException("Hours worked cannot be negative.");
         }
-
 
         BigDecimal hours = BigDecimal.valueOf(hoursWorked);
         BigDecimal regularHours = hours.min(BigDecimal.valueOf(40));
@@ -163,10 +188,12 @@ public class HourlyEmployee implements IEmployee, IPayStub {
     }
 
     /**
-     * Formats the number as follows:
-     * 1. Whole numbers (e.g., 1661.0) get 1 decimal.
-     * 2. Non-whole numbers with 1 decimal (e.g., 2491.5) remain as they are.
-     * 3. Numbers with 2 decimals (e.g., 4802.38) stay with 2 decimals.
+     * Formats numerical values for CSV output.
+     *
+     * <p>Ensures whole numbers retain one decimal place, while other numbers maintain their full precision.</p>
+     *
+     * @param value the {@code BigDecimal} value to format
+     * @return a properly formatted string representation of the number
      */
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength"})
     private String formatNumber(double value) {

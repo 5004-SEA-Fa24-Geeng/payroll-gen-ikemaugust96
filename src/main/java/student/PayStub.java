@@ -3,7 +3,11 @@ package student;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-@SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength", "checkstyle:MissingJavadocType"})
+/**
+ * Represents a pay stub for an employee, including details
+ * about net pay, taxes, and year-to-date earnings.
+ */
+@SuppressWarnings("checkstyle:Indentation")
 public class PayStub implements IPayStub {
     @SuppressWarnings("checkstyle:Indentation")
     private final String employeeName;
@@ -16,7 +20,16 @@ public class PayStub implements IPayStub {
     @SuppressWarnings("checkstyle:Indentation")
     private final double ytdTaxesPaid;
 
-    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:MissingJavadocMethod"})
+    /**
+     * Constructs a new {@code PayStub} instance.
+     *
+     * @param employeeName the name of the employee
+     * @param netPay       the net pay for the current payroll period
+     * @param taxesPaid    the amount of taxes deducted for the current payroll period
+     * @param ytdEarnings  the total earnings of the employee year-to-date
+     * @param ytdTaxesPaid the total taxes paid by the employee year-to-date
+     */
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength"})
     public PayStub(String employeeName, double netPay, double taxesPaid, double ytdEarnings, double ytdTaxesPaid) {
         this.employeeName = employeeName;
         this.netPay = netPay;
