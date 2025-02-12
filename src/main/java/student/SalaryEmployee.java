@@ -16,23 +16,41 @@ import java.math.RoundingMode;
  */
 @SuppressWarnings({"checkstyle:SummaryJavadoc", "checkstyle:LineLength"})
 public class SalaryEmployee implements IEmployee {
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * The employee's name.
+     */
     private final String name;
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * The unique identifier for the employee.
+     */
     private final String id;
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * The employee's hourly pay rate.
+     */
     private final double payRate;
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * The employee's pre-tax deductions.
+     */
     private final double pretaxDeductions;
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * The employee's year-to-date earnings.
+     */
     private double ytdEarnings;
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * The employee's year-to-date taxes paid.
+     */
     private double ytdTaxesPaid;
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * The original year-to-date earnings before payroll calculations.
+     */
     private final double originalYtdEarnings;
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * The original year-to-date taxes paid before payroll calculations.
+     */
     private final double originalYtdTaxesPaid;
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * The net pay.
+     */
     private double netPay; // Store net pay for toCSV()
 
     /**

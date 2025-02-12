@@ -10,7 +10,8 @@ import java.util.List;
  * with the objects themselves and the concept of a factory, but we placed
  * them here to keep the code clean (and to help guide you).
  */
-@SuppressWarnings({"checkstyle:Indentation", "checkstyle:CommentsIndentation", "checkstyle:LineLength", "checkstyle:JavadocParagraph", "checkstyle:SummaryJavadoc"})
+@SuppressWarnings({"checkstyle:Indentation", "checkstyle:CommentsIndentation",
+        "checkstyle:LineLength", "checkstyle:JavadocParagraph", "checkstyle:SummaryJavadoc"})
 public final class Builder {
 
 
@@ -21,6 +22,7 @@ public final class Builder {
     /**
      * list from cvs
      */
+    @SuppressWarnings("checkstyle:AbbreviationAsWordInName")
     public static List<IEmployee>
     buildEmployeesFromCSV(Path employeesFilePath) {
         return new ArrayList<>();
@@ -30,9 +32,9 @@ public final class Builder {
      * Builds an employee object from a CSV string.
      * You may end up checking the type of employee (hourly or salary) by looking at the first
      * element of the CSV string. Then building an object specific to that type.
-     *
-     * @param csv the CSV string
-     * @return the employee object
+     * * @param csv A comma-separated string containing employee data.
+     * <p>
+     * * @return An IEmployee object representing the employee.
      */
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength",
             "checkstyle:AbbreviationAsWordInName",
