@@ -37,23 +37,49 @@ public class SalaryEmployee implements IEmployee {
         this.pretaxDeductions = pretaxDeductions;
         this.originalYtdEarnings = ytdEarnings;
         this.originalYtdTaxesPaid = ytdTaxesPaid;
-        this.netPay = 0;
     }
 
     @SuppressWarnings({"checkstyle:LeftCurly", "checkstyle:Indentation"})
-    @Override public String getName() { return name; }
+    @Override
+    public String getName() {
+        return name;
+    }
+
     @SuppressWarnings({"checkstyle:LeftCurly", "checkstyle:EmptyLineSeparator", "checkstyle:Indentation"})
-    @Override public String getID() { return id; }
+    @Override
+    public String getID() {
+        return id;
+    }
+
     @SuppressWarnings({"checkstyle:LeftCurly", "checkstyle:EmptyLineSeparator", "checkstyle:Indentation"})
-    @Override public double getPayRate() { return annualSalary; }
+    @Override
+    public double getPayRate() {
+        return annualSalary;
+    }
+
     @SuppressWarnings({"checkstyle:LeftCurly", "checkstyle:EmptyLineSeparator", "checkstyle:Indentation"})
-    @Override public String getEmployeeType() { return "SALARY"; }
+    @Override
+    public String getEmployeeType() {
+        return "SALARY";
+    }
+
     @SuppressWarnings({"checkstyle:LeftCurly", "checkstyle:EmptyLineSeparator", "checkstyle:Indentation"})
-    @Override public double getYTDEarnings() { return ytdEarnings; }
+    @Override
+    public double getYTDEarnings() {
+        return ytdEarnings;
+    }
+
     @SuppressWarnings({"checkstyle:LeftCurly", "checkstyle:EmptyLineSeparator", "checkstyle:Indentation"})
-    @Override public double getYTDTaxesPaid() { return ytdTaxesPaid; }
+    @Override
+    public double getYTDTaxesPaid() {
+        return ytdTaxesPaid;
+    }
+
     @SuppressWarnings({"checkstyle:LeftCurly", "checkstyle:EmptyLineSeparator", "checkstyle:Indentation"})
-    @Override public double getPretaxDeductions() { return pretaxDeductions; }
+    @Override
+    public double getPretaxDeductions() {
+        return pretaxDeductions;
+    }
 
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength"})
     @Override
