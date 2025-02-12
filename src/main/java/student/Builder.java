@@ -68,7 +68,7 @@ public final class Builder {
      */
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:AbbreviationAsWordInName", "checkstyle:CommentsIndentation"})
     public static ITimeCard buildTimeCardFromCSV(String csv) {
-        System.out.println(" Parsing Time Card CSV: " + csv);
+        System.out.println("🔍 Parsing Time Card CSV: " + csv);
 
         String[] parts = csv.split(",");
 
@@ -79,16 +79,15 @@ public final class Builder {
             String employeeID = parts[0].trim();
             double hoursWorked = Double.parseDouble(parts[1].trim());
 
-            System.out.println("Time Card Parsed - ID: " + employeeID + ", Hours: " + hoursWorked);
-
-            // 🚨 STOP execution if negative hours exist
+            // 🚨 Ignore negative hours instead of throwing an error
             if (hoursWorked < 0) {
-                throw new IllegalArgumentException(" ERROR: Negative hours detected for Employee ID " + employeeID);
+                System.out.println("⚠WARNING: Skipping negative hours for Employee ID " + employeeID);
+                return null; // Returning null will ensure it’s ignored in PayrollGenerator
             }
 
             return new ITimeCard.TimeCard(employeeID, hoursWorked);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("ERROR: Invalid number format in TimeCard CSV: " + csv, e);
+            throw new IllegalArgumentException(" ERROR: Invalid number format in TimeCard CSV: " + csv, e);
         }
     }
 }
