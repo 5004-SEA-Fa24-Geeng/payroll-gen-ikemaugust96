@@ -176,10 +176,8 @@ public class HourlyEmployee implements IEmployee, IPayStub {
                 .setScale(2, RoundingMode.HALF_UP);
         BigDecimal netPay = taxable.subtract(taxes);
 
-        /**Accumulate YTD values once per payroll cycle.
-         *
-         * Accumulate YTD earnings and taxes
-         */
+        //Accumulate YTD values once per payroll cycle.
+        //Accumulate YTD earnings and taxex
         this.ytdEarnings = originalYtdEarnings + netPay.doubleValue();
         this.ytdTaxesPaid = originalYtdTaxesPaid + taxes.doubleValue();
 
