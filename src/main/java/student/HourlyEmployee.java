@@ -93,7 +93,10 @@ public class HourlyEmployee implements IEmployee, IPayStub {
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:NeedBraces"})
     @Override
     public IPayStub runPayroll(double hoursWorked) {
-        if (hoursWorked < 0) return null;
+        if (hoursWorked < 0) {
+            throw new IllegalStateException("Hours worked cannot be negative.");
+        }
+
 
         BigDecimal hours = BigDecimal.valueOf(hoursWorked);
         BigDecimal regularHours = hours.min(BigDecimal.valueOf(40));
