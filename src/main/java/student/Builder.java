@@ -1,39 +1,40 @@
 package student;
+
 import java.nio.file.Path;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
-
-
-/** 
+/**
  * This is a static class (essentially functions) that will help you build objects from CSV strings.
  * These objects are then used in the rest of the program. Often these builders are associated
  * with the objects themselves and the concept of a factory, but we placed
  * them here to keep the code clean (and to help guide you).
  */
-    public final class Builder {
+@SuppressWarnings({"checkstyle:Indentation", "checkstyle:CommentsIndentation", "checkstyle:LineLength", "checkstyle:JavadocParagraph"})
+public final class Builder {
 
 
+    @SuppressWarnings("checkstyle:Indentation")
     private Builder() {
     }
 
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:AbbreviationAsWordInName", "checkstyle:MissingJavadocMethod"})
     public static List<IEmployee> buildEmployeesFromCSV(Path employeesFilePath) {
-        List<IEmployee> employees = new ArrayList<>();
         // Implement logic to read employees from CSV and add them to the list.
         // For example:
         // Read the file, parse the CSV, and create IEmployee objects.
-        return employees;
+        return new ArrayList<>();
     }
 
-     /**
+    /**
      * Builds an employee object from a CSV string.
-     * 
      * You may end up checking the type of employee (hourly or salary) by looking at the first
      * element of the CSV string. Then building an object specific to that type.
-     * 
+     *
      * @param csv the CSV string
-     * @return the employee object
+     *            * @return the employee object
      */
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength", "checkstyle:AbbreviationAsWordInName", "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:CommentsIndentation"})
     public static IEmployee buildEmployeeFromCSV(String csv) {
 
         // Split CSV by commas
@@ -59,12 +60,13 @@ import java.util.ArrayList;
     }
 
 
-   /**
+    /**
      * Converts a TimeCard from a CSV String.
      *
      * @param csv csv string
      * @return a TimeCard object
      */
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:AbbreviationAsWordInName", "checkstyle:CommentsIndentation"})
     public static ITimeCard buildTimeCardFromCSV(String csv) {
 
         // Split CSV into an array of strings

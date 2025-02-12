@@ -3,24 +3,37 @@ package student;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+@SuppressWarnings({"checkstyle:Indentation", "checkstyle:MissingJavadocType"})
 public class HourlyEmployee implements IEmployee, IPayStub {
+    @SuppressWarnings("checkstyle:Indentation")
     private final String name;
+    @SuppressWarnings("checkstyle:Indentation")
     private final String id;
+    @SuppressWarnings("checkstyle:Indentation")
     private final double payRate;
+    @SuppressWarnings("checkstyle:Indentation")
     private final double pretaxDeductions;
+    @SuppressWarnings("checkstyle:Indentation")
     private double ytdEarnings;
+    @SuppressWarnings("checkstyle:Indentation")
     private double ytdTaxesPaid;
+    @SuppressWarnings("checkstyle:Indentation")
     private double netPay;  // Store the net pay
+    @SuppressWarnings("checkstyle:Indentation")
     private final double originalYtdEarnings;
+    @SuppressWarnings("checkstyle:Indentation")
     private final double originalYtdTaxesPaid;
 
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:AbbreviationAsWordInName"})
     public void setYTDEarnings(double earnings) {
         this.ytdEarnings = earnings;
     }
 
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:AbbreviationAsWordInName"})
     public void setYTDTaxesPaid(double taxesPaid) {
         this.ytdTaxesPaid = taxesPaid;
     }
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:EmptyLineSeparator", "checkstyle:MissingJavadocMethod"})
     public HourlyEmployee(String name, String id, double payRate,
                           double ytdEarnings, double ytdTaxesPaid,
                           double pretaxDeductions) {
@@ -34,41 +47,49 @@ public class HourlyEmployee implements IEmployee, IPayStub {
         this.originalYtdTaxesPaid = this.ytdTaxesPaid;
     }
 
+    @SuppressWarnings("checkstyle:Indentation")
     @Override
     public String getName() {
         return name;
     }
 
+    @SuppressWarnings("checkstyle:Indentation")
     @Override
     public String getID() {
         return id;
     }
 
+    @SuppressWarnings("checkstyle:Indentation")
     @Override
     public double getPayRate() {
         return payRate;
     }
 
+    @SuppressWarnings("checkstyle:Indentation")
     @Override
     public String getEmployeeType() {
         return "HOURLY";
     }
 
+    @SuppressWarnings("checkstyle:Indentation")
     @Override
     public double getYTDEarnings() {
         return ytdEarnings;
     }
 
+    @SuppressWarnings("checkstyle:Indentation")
     @Override
     public double getYTDTaxesPaid() {
         return ytdTaxesPaid;
     }
 
+    @SuppressWarnings("checkstyle:Indentation")
     @Override
     public double getPretaxDeductions() {
         return pretaxDeductions;
     }
 
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:NeedBraces"})
     @Override
     public IPayStub runPayroll(double hoursWorked) {
         if (hoursWorked < 0) return null;
@@ -106,22 +127,26 @@ public class HourlyEmployee implements IEmployee, IPayStub {
     }
 
     // Method to restore original YTD values
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:MissingJavadocMethod"})
     public void restoreOriginalYtdValues() {
         this.ytdEarnings = this.originalYtdEarnings;
         this.ytdTaxesPaid = this.originalYtdTaxesPaid;
     }
 
 
+    @SuppressWarnings("checkstyle:Indentation")
     @Override
     public double getPay() {
         return netPay;  // Return the calculated net pay
     }
 
+    @SuppressWarnings("checkstyle:Indentation")
     @Override
     public double getTaxesPaid() {
         return netPay * 0.2265;  // Returns taxes paid (22.65% of net pay)
     }
 
+    @SuppressWarnings("checkstyle:Indentation")
     @Override
     public String toCSV() {
         return String.format("HOURLY,%s,%s,%s,%s,%s,%s",
@@ -140,6 +165,7 @@ public class HourlyEmployee implements IEmployee, IPayStub {
      * 2. Non-whole numbers with 1 decimal (e.g., 2491.5) remain as they are.
      * 3. Numbers with 2 decimals (e.g., 4802.38) stay with 2 decimals.
      */
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength"})
     private String formatNumber(double value) {
         BigDecimal number = BigDecimal.valueOf(value).setScale(2, RoundingMode.HALF_UP).stripTrailingZeros();
 

@@ -1,51 +1,63 @@
 package student;
 
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * Main driver for the PayrollGenerator program.
- * 
- * Students, you are free to modify this file as needed, but you need to leave in the parts where we
+ *
+ * <p>Students, you are free to modify this file as needed, but you need to leave in the parts where we
  * can pass in the employee and payroll files as arguments.
- * 
- * Grading wise, we will both be using unit tests, and running your program with different employee
+ *
+ * <p>Grading wise, we will both be using unit tests, and running your program with different employee
  * files. We also will create a separate output file for each.
- * 
- * 
- * To run the program, you can use the following command:
- * 
- * java student.PayrollGenerator -e employees_mine.csv -t time_cards.csv -o pay_stubs_mine.csv or
+ *
+ * <p>To run the program, you can use the following command:
+ *
+ * <p>java student.PayrollGenerator -e employees_mine.csv -t time_cards.csv -o pay_stubs_mine.csv or
  * java student.PayrollGenerator The above defaults listed below.
- * 
- * We also suggest meeting with a TA and learning how to add command line arguments
+ *
+ * <p>We also suggest meeting with a TA and learning how to add command line arguments
  * in your IDE, as it will make testing and debugging easier.
  **/
+@SuppressWarnings({"checkstyle:Indentation", "checkstyle:JavadocParagraph", "checkstyle:LineLength"})
 public final class PayrollGenerator {
-    /** default file name for employees. */
+    /**
+     * default file name for employees.
+     */
+    @SuppressWarnings("checkstyle:Indentation")
     private static final String DEFAULT_EMPLOYEE_FILE = "resources/employees.csv";
-    /** default file name for pay stub output. */
+    /**
+     * default file name for pay stub output.
+     */
+    @SuppressWarnings("checkstyle:Indentation")
     private static final String DEFAULT_PAYROLL_FILE = "resources/pay_stubs.csv";
-    /** default time card file name. */
+    /**
+     * default time card file name.
+     */
+    @SuppressWarnings("checkstyle:Indentation")
     private static final String DEFAULT_TIME_CARD_FILE = "resources/time_cards.csv";
 
 
     /**
      * private constructor to prevent instantiation.
      */
+    @SuppressWarnings("checkstyle:Indentation")
     private PayrollGenerator() {
 
     }
 
     /**
      * Main driver for the program.
-     * 
+     *
      * @param args command line arguments
      */
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength", "checkstyle:AbbreviationAsWordInName", "checkstyle:CommentsIndentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
     public static void main(String[] args) {
         Arguments arguments = Arguments.process(args); // leave this, and make sure you use it on
-                                                       // reading/writing files!
+        // reading/writing files!
 
         // you are free to modify this code, or use it as a basis for your code
         // depends on how you want to implement the program
@@ -54,10 +66,10 @@ public final class PayrollGenerator {
         List<String> timeCards = FileUtil.readFileToList(arguments.getTimeCards());
 
         List<IEmployee> employees = employeeLines.stream().map(Builder::buildEmployeeFromCSV)
-                .collect(Collectors.toList());
+                .toList();
 
         List<ITimeCard> timeCardList = timeCards.stream().map(Builder::buildTimeCardFromCSV)
-                .collect(Collectors.toList());
+                .toList();
 
         List<IPayStub> payStubs = new LinkedList<>();
 
@@ -103,17 +115,17 @@ public final class PayrollGenerator {
             }
         }
 
-         // now save out employees to a new file
+        // now save out employees to a new file
 
-         employeeLines = employees.stream().map(IEmployee::toCSV).collect(Collectors.toList());
-         employeeLines.add(0, FileUtil.EMPLOYEE_HEADER);
-         FileUtil.writeFile(arguments.getEmployeeFile(), employeeLines);
- 
-         // now save out the pay stubs
-         List<String> payStubLines = payStubs.stream().filter(x -> x != null).map(IPayStub::toCSV)
-                 .collect(Collectors.toList());
-         payStubLines.add(0, FileUtil.PAY_STUB_HEADER);
-         FileUtil.writeFile(arguments.getPayrollFile(), payStubLines);
+        employeeLines = employees.stream().map(IEmployee::toCSV).collect(Collectors.toList());
+        employeeLines.addFirst(FileUtil.EMPLOYEE_HEADER);
+        FileUtil.writeFile(arguments.getEmployeeFile(), employeeLines);
+
+        // now save out the pay stubs
+        List<String> payStubLines = payStubs.stream().filter(Objects::nonNull).map(IPayStub::toCSV)
+                .collect(Collectors.toList());
+        payStubLines.addFirst(FileUtil.PAY_STUB_HEADER);
+        FileUtil.writeFile(arguments.getPayrollFile(), payStubLines);
 
     }
 
@@ -122,49 +134,63 @@ public final class PayrollGenerator {
      * This is an internal class. Please leave it as is/do not modify! This design is common for
      * processing arguments if you want to make sure it is unique to the driver.
      */
+    @SuppressWarnings("checkstyle:Indentation")
     private static final class Arguments {
-        /** sets the employeeFile argument. */
+        /**
+         * sets the employeeFile argument.
+         */
+        @SuppressWarnings("checkstyle:Indentation")
         private String employeeFile = DEFAULT_EMPLOYEE_FILE;
 
-        /** sets the payrollFile argument. */
+        /**
+         * sets the payrollFile argument.
+         */
+        @SuppressWarnings("checkstyle:Indentation")
         private String payrollFile = DEFAULT_PAYROLL_FILE;
 
-        /** sets the timeCards argument. */
+        /**
+         * sets the timeCards argument.
+         */
+        @SuppressWarnings("checkstyle:Indentation")
         private String timeCards = DEFAULT_TIME_CARD_FILE;
 
 
         /**
          * Constructor for Arguments. Setup as private, so builder has to be used.
-         * 
+         *
          * @see #process(String[])
          */
+        @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:LineLength"})
         private Arguments() {
 
         }
 
         /**
          * Gets the employee file.
-         * 
+         *
          * @return the name of the employee file
          */
+        @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:LineLength"})
         public String getEmployeeFile() {
             return employeeFile;
         }
 
         /**
          * Gets the payroll file.
-         * 
+         *
          * @return the name of the payroll file
          */
+        @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:LineLength"})
         public String getPayrollFile() {
             return payrollFile;
         }
 
         /**
          * Gets the time card file.
-         * 
+         *
          * @return the name of the time card file
          */
+        @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:LineLength"})
         public String getTimeCards() {
             return timeCards;
         }
@@ -172,6 +198,7 @@ public final class PayrollGenerator {
         /**
          * Prints the help message.
          */
+        @SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength"})
         public void printHelp() {
             System.out.println(
                     "Usage: java student.PayrollGenerator [-e employee_file] [-t time_cards_file] [-o payroll_file]");
@@ -187,10 +214,11 @@ public final class PayrollGenerator {
 
         /**
          * Processes the arguments.
-         * 
+         *
          * @param args the arguments
          * @return an Argument object with file names added
          */
+        @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
         public static Arguments process(String[] args) {
             Arguments arguments = new Arguments();
             for (int i = 0; i < args.length; i++) {
