@@ -3,6 +3,7 @@ package student;
 // note: java.nio was introduced in Java 17.
 // if you have an older version of Java, you will either
 // want to update, or convert this code to use Buffered reader
+
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.nio.file.Path;
@@ -14,30 +15,38 @@ import java.util.List;
  * Contains simple utilities for reading in a file. You are free to modify this file as you
  * need/want, but it is not required.
  */
+@SuppressWarnings("checkstyle:Indentation")
 public final class FileUtil {
-    /** header line required when writing out to the employee file. */
+    /**
+     * header line required when writing out to the employee file.
+     */
+    @SuppressWarnings("checkstyle:Indentation")
     public static final String EMPLOYEE_HEADER =
             "employee_type,name,ID,payRate,pretaxDeductions,YTDEarnings,YTDTaxesPaid";
 
-    /** header line required when writing out to the pay stub file. */
+    /**
+     * header line required when writing out to the pay stub file.
+     */
+    @SuppressWarnings("checkstyle:Indentation")
     public static final String PAY_STUB_HEADER =
             "employee_name,net_pay,taxes,ytd_earnings,ytd_taxes_paid";
-
 
 
     /**
      * Private constructor to prevent instantiation.
      */
+    @SuppressWarnings("checkstyle:Indentation")
     private FileUtil() {
 
     }
 
     /**
      * Reads in a text file and returns a list of strings, one for each line in the file.
-     * 
+     *
      * @param file the file name
      * @return a list of strings, one for each line in the file
      */
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
     public static List<String> readFileToList(String file) {
         List<String> lines = Collections.emptyList();
         try {
@@ -50,24 +59,25 @@ public final class FileUtil {
     }
 
 
-
     /**
      * Writes the lines to the file. Will backup teh file if it exists.
-     * 
+     *
      * @param outFile the file name
-     * @param lines the lines to write
+     * @param lines   the lines to write
      */
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
     public static void writeFile(String outFile, List<String> lines) {
         writeFile(outFile, lines, true);
     }
 
     /**
      * Writes the lines to the file.
-     * 
+     *
      * @param outFile the file name
-     * @param lines the lines to write
-     * @param backup if true, will backup the file if it exists
+     * @param lines   the lines to write
+     * @param backup  if true, will backup the file if it exists
      */
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
     public static void writeFile(String outFile, List<String> lines, boolean backup) {
         if (backup) {
             try {

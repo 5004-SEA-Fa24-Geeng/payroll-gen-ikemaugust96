@@ -37,6 +37,7 @@ public class SalaryEmployee implements IEmployee {
         this.pretaxDeductions = pretaxDeductions;
         this.originalYtdEarnings = ytdEarnings;
         this.originalYtdTaxesPaid = ytdTaxesPaid;
+        System.out.println(this.payRate);
     }
 
     @SuppressWarnings({"checkstyle:LeftCurly", "checkstyle:Indentation"})
@@ -113,7 +114,7 @@ public class SalaryEmployee implements IEmployee {
         return String.format("SALARY,%s,%s,%s,%s,%s,%s",
                 name,
                 id,
-                formatNumber(netPay), // Use stored netPay
+                formatNumber(payRate), // Use stored netPay
                 formatNumber(pretaxDeductions),
                 formatNumber(ytdEarnings),
                 formatNumber(ytdTaxesPaid)

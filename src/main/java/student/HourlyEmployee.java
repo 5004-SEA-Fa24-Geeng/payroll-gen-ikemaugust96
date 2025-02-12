@@ -33,6 +33,7 @@ public class HourlyEmployee implements IEmployee, IPayStub {
     public void setYTDTaxesPaid(double taxesPaid) {
         this.ytdTaxesPaid = taxesPaid;
     }
+
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:EmptyLineSeparator", "checkstyle:MissingJavadocMethod"})
     public HourlyEmployee(String name, String id, double payRate,
                           double ytdEarnings, double ytdTaxesPaid,
@@ -116,7 +117,6 @@ public class HourlyEmployee implements IEmployee, IPayStub {
         this.ytdTaxesPaid = originalYtdTaxesPaid + taxes.doubleValue();
 
 
-
         return new PayStub(
                 this.name,              // Employee's name
                 netPay.doubleValue(),   // Net pay for the current period
@@ -152,7 +152,7 @@ public class HourlyEmployee implements IEmployee, IPayStub {
         return String.format("HOURLY,%s,%s,%s,%s,%s,%s",
                 name,
                 id,
-                formatNumber(netPay),
+                formatNumber(payRate),
                 formatNumber(pretaxDeductions),
                 formatNumber(ytdEarnings),
                 formatNumber(ytdTaxesPaid)
