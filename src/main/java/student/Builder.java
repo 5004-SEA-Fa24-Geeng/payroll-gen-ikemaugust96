@@ -79,7 +79,7 @@ public final class Builder {
             String employeeID = parts[0].trim();
             double hoursWorked = Double.parseDouble(parts[1].trim());
 
-            // 🚨 Ignore negative hours instead of throwing an error
+            //  Ignore negative hours instead of throwing an error
             if (hoursWorked < 0) {
                 System.out.println("⚠WARNING: Skipping negative hours for Employee ID " + employeeID);
                 return null; // Returning null will ensure it’s ignored in PayrollGenerator

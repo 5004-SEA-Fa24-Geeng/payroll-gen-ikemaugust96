@@ -91,6 +91,10 @@ public final class PayrollGenerator {
         }
         // Process payroll for each employee
         for (ITimeCard timeCard : timeCardList) {
+            if (timeCard == null) {
+                // Optionally, log or handle the null timeCard scenario
+                continue; // Skip to the next iteration if timeCard is null
+            }
             String empID = timeCard.getEmployeeID();
             double hoursWorked = timeCard.getHoursWorked();
 
