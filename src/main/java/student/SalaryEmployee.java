@@ -11,7 +11,7 @@ public class SalaryEmployee implements IEmployee {
     @SuppressWarnings("checkstyle:Indentation")
     private final String id;
     @SuppressWarnings("checkstyle:Indentation")
-    private final double annualSalary;
+    private final double payRate;
     @SuppressWarnings("checkstyle:Indentation")
     private final double pretaxDeductions;
     @SuppressWarnings("checkstyle:Indentation")
@@ -26,12 +26,12 @@ public class SalaryEmployee implements IEmployee {
     private double netPay; // Store net pay for toCSV()
 
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:MissingJavadocMethod"})
-    public SalaryEmployee(String name, String id, double annualSalary,
+    public SalaryEmployee(String name, String id, double payRate,
                           double ytdEarnings, double ytdTaxesPaid,
                           double pretaxDeductions) {
         this.name = name;
         this.id = id;
-        this.annualSalary = annualSalary;
+        this.payRate = payRate;
         this.ytdEarnings = ytdEarnings;
         this.ytdTaxesPaid = ytdTaxesPaid;
         this.pretaxDeductions = pretaxDeductions;
@@ -54,7 +54,7 @@ public class SalaryEmployee implements IEmployee {
     @SuppressWarnings({"checkstyle:LeftCurly", "checkstyle:EmptyLineSeparator", "checkstyle:Indentation"})
     @Override
     public double getPayRate() {
-        return annualSalary;
+        return payRate;
     }
 
     @SuppressWarnings({"checkstyle:LeftCurly", "checkstyle:EmptyLineSeparator", "checkstyle:Indentation"})
@@ -85,7 +85,7 @@ public class SalaryEmployee implements IEmployee {
     @Override
     public IPayStub runPayroll(double hoursWorked) {
         // Biweekly salary calculation
-        BigDecimal grossPay = BigDecimal.valueOf(annualSalary)
+        BigDecimal grossPay = BigDecimal.valueOf(payRate)
                 .divide(BigDecimal.valueOf(24), 2, RoundingMode.HALF_UP);
 
         // Deduct pretax contributions
