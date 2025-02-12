@@ -10,8 +10,7 @@ import java.util.List;
  * with the objects themselves and the concept of a factory, but we placed
  * them here to keep the code clean (and to help guide you).
  */
-@SuppressWarnings({"checkstyle:Indentation",
-        "checkstyle:CommentsIndentation", "checkstyle:LineLength", "checkstyle:JavadocParagraph"})
+@SuppressWarnings({"checkstyle:Indentation", "checkstyle:CommentsIndentation", "checkstyle:LineLength", "checkstyle:JavadocParagraph", "checkstyle:SummaryJavadoc"})
 public final class Builder {
 
 
@@ -19,10 +18,9 @@ public final class Builder {
     private Builder() {
     }
 
-    @SuppressWarnings({"checkstyle:Indentation",
-            "checkstyle:AbbreviationAsWordInName", "checkstyle:MissingJavadocMethod"})
-
-
+    /**
+     * list from cvs
+     */
     public static List<IEmployee>
     buildEmployeesFromCSV(Path employeesFilePath) {
         return new ArrayList<>();

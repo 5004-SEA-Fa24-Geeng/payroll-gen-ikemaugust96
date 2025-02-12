@@ -55,7 +55,8 @@ public final class PayrollGenerator {
      * @param args command line arguments
      */
     @SuppressWarnings({"checkstyle:Indentation",
-            "checkstyle:LineLength", "checkstyle:AbbreviationAsWordInName", "checkstyle:CommentsIndentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
+            "checkstyle:LineLength", "checkstyle:AbbreviationAsWordInName",
+            "checkstyle:CommentsIndentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
     public static void main(String[] args) {
         Arguments arguments = Arguments.process(args); // leave this, and make sure you use it on
         // reading/writing files!

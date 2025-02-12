@@ -3,9 +3,7 @@ package student;
 
 /**
  * An interface for the concept of the employee.
- * <p>
  * DO NOT MODIFY THIS FILE! (unless you are cleaning up comments/style changes)
- * <p>
  * This file is provided, and we will be grading every function implemented in as a unit test for
  * both SalaryEmployee and HourlyEmployee.
  */
@@ -15,7 +13,7 @@ public interface IEmployee {
     /**
      * Gets the employee's name.
      *
-     * <p>@return the name of the employee
+     * @return the name of the employee
      */
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
     String getName();
@@ -23,30 +21,31 @@ public interface IEmployee {
     /**
      * <p>Gets the employee's ID.
      *
-     * <p>@return the ID of the employee
+     * @return the ID of the employee
      */
 
+    @SuppressWarnings("checkstyle:Indentation")
     String getID();
 
     /**
      * Gets the employee's pay rate.
      *
-     * <p>@return the pay rate of the employee
+     * @return the pay rate of the employee
      */
+    @SuppressWarnings("checkstyle:Indentation")
     double getPayRate();
 
 
     /**
      * Gets the employee's Type as a string.
-     * <p>
      * Either "HOURLY" or "SALARY" depending on the type of employee.
-     * <p>
      * You may want to consider using an enum to store
      * the type, and using .name() to get the string representation.
      *
      * @return the type of the employee as a string
      */
-    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:JavadocParagraph"})
+    @SuppressWarnings({"checkstyle:Indentation",
+            "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:JavadocParagraph"})
     String getEmployeeType();
 
     /**
@@ -54,7 +53,8 @@ public interface IEmployee {
      *
      * @return the YTD earnings of the employee
      */
-    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
+    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName",
+            "checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
     double getYTDEarnings();
 
     /**
@@ -62,7 +62,8 @@ public interface IEmployee {
      *
      * @return the YTD taxes paid by the employee
      */
-    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
+    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName",
+            "checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup"})
     double getYTDTaxesPaid();
 
     /**
@@ -73,7 +74,8 @@ public interface IEmployee {
      *
      * @return the pretax deductions for the employee
      */
-    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:JavadocParagraph"})
+    @SuppressWarnings({"checkstyle:Indentation",
+            "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:JavadocParagraph"})
     double getPretaxDeductions();
 
 
@@ -99,7 +101,8 @@ public interface IEmployee {
      * @param hoursWorked the hours worked for the pay period
      * @return the pay stub for the current pay period
      */
-    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:LineLength", "checkstyle:JavadocParagraph"})
+    @SuppressWarnings({"checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup",
+            "checkstyle:LineLength", "checkstyle:JavadocParagraph"})
     IPayStub runPayroll(double hoursWorked);
 
 
@@ -116,7 +119,8 @@ public interface IEmployee {
      *
      * @return the employee as a CSV string
      */
-    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:Indentation", "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:JavadocParagraph"})
+    @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:Indentation",
+            "checkstyle:RequireEmptyLineBeforeBlockTagGroup", "checkstyle:JavadocParagraph"})
     String toCSV();
 
 

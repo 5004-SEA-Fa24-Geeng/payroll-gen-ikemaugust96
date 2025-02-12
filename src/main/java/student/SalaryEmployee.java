@@ -14,7 +14,7 @@ import java.math.RoundingMode;
  * @author [Your Name]
  * @version 1.0
  */
-@SuppressWarnings({"checkstyle:Indentation", "checkstyle:LineLength", "checkstyle:SummaryJavadoc"})
+@SuppressWarnings({"checkstyle:SummaryJavadoc", "checkstyle:LineLength"})
 public class SalaryEmployee implements IEmployee {
     @SuppressWarnings("checkstyle:Indentation")
     private final String name;

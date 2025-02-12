@@ -16,30 +16,63 @@ import java.math.RoundingMode;
  */
 @SuppressWarnings("checkstyle:Indentation")
 public class HourlyEmployee implements IEmployee, IPayStub {
+    /**
+     * The employee's name.
+     */
     @SuppressWarnings("checkstyle:Indentation")
     private final String name;
+    /**
+     * The unique identifier for the employee.
+     */
     @SuppressWarnings("checkstyle:Indentation")
     private final String id;
+    /**
+     * The employee's hourly pay rate.
+     */
     @SuppressWarnings("checkstyle:Indentation")
     private final double payRate;
+    /**
+     * The employee's pre-tax deductions.
+     */
     @SuppressWarnings("checkstyle:Indentation")
     private final double pretaxDeductions;
+    /**
+     * The employee's year-to-date earnings.
+     */
     @SuppressWarnings("checkstyle:Indentation")
     private double ytdEarnings;
+    /**
+     * The employee's year-to-date taxes paid.
+     */
     @SuppressWarnings("checkstyle:Indentation")
     private double ytdTaxesPaid;
+    /**
+     * The original year-to-date earnings before payroll calculations.
+     */
     @SuppressWarnings("checkstyle:Indentation")
     private double netPay;  // Store the net pay
+    /**
+     * The original year-to-date taxes paid before payroll calculations.
+     */
     @SuppressWarnings("checkstyle:Indentation")
     private final double originalYtdEarnings;
+    /**
+     * The original year-to-date taxes paid before payroll calculations.
+     */
     @SuppressWarnings("checkstyle:Indentation")
     private final double originalYtdTaxesPaid;
 
+    /**
+     * The re-set original year-to-date earning.
+     */
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:AbbreviationAsWordInName"})
     public void setYTDEarnings(double earnings) {
         this.ytdEarnings = earnings;
     }
 
+    /**
+     * The re-set original year-to-date tax payment.
+     */
     @SuppressWarnings({"checkstyle:Indentation", "checkstyle:AbbreviationAsWordInName"})
     public void setYTDTaxesPaid(double taxesPaid) {
         this.ytdTaxesPaid = taxesPaid;
@@ -117,6 +150,7 @@ public class HourlyEmployee implements IEmployee, IPayStub {
      * @param hoursWorked the number of hours worked in the pay period
      * @return a new {@code PayStub} representing the payroll data for this pay period
      */
+    @SuppressWarnings("checkstyle:Indentation")
     @Override
     public IPayStub runPayroll(double hoursWorked) {
         if (hoursWorked < 0) {

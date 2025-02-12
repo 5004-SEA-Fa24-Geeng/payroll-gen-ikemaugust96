@@ -33,10 +33,15 @@ public interface ITimeCard {
      * By nesting this class inside the interface, we ensure that an implementation
      * is always available without needing a separate file.
      */
+    @SuppressWarnings("checkstyle:SummaryJavadoc")
     class TimeCard implements ITimeCard { // Implements ITimeCard
-        @SuppressWarnings({"checkstyle:AbbreviationAsWordInName", "checkstyle:Indentation"})
+        /**
+         * id of employee
+         */
         private final String employeeID;
-        @SuppressWarnings("checkstyle:Indentation")
+        /**
+         * working length of employee by hour
+         */
         private final double hoursWorked;
 
         /**

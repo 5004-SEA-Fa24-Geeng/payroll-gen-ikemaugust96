@@ -7,17 +7,26 @@ import java.math.RoundingMode;
  * Represents a pay stub for an employee, including details
  * about net pay, taxes, and year-to-date earnings.
  */
-@SuppressWarnings("checkstyle:Indentation")
 public class PayStub implements IPayStub {
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * The name of the employee.
+     */
     private final String employeeName;
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * The net pay for the current pay period.
+     */
     private final double netPay;
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * The taxes paid during the current pay period.
+     */
     private final double taxesPaid;
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * The year-to-date earnings of the employee.
+     */
     private final double ytdEarnings;  // These should be the final values, not modified again
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * The year-to-date taxes paid by the employee.
+     */
     private final double ytdTaxesPaid;
 
     /**
