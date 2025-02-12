@@ -7,8 +7,10 @@ Link to Assignment on Github: (copy and paste the link to your assignment repo h
 [
 ](https://github.com/5004-SEA-Fa24-Geeng/payroll-gen-ikemaugust96)
 
+
 How many hours did it take you to complete this assignment (estimate)?
 30
+
 Did you collaborate with any other students/TAs/Professors? If so, tell us who and in what
 capacity.
 
@@ -24,5 +26,7 @@ my friend's github.Unfortunately for privacy reasons I can't post it here.
 (Optional) What was your favorite part of the assignment?
 
 (Optional) How would you improve the assignment?
+
 emmmm I even tried nest if_else, multiple the value by 100 to try to solve the 1661.00 issue, which inspired me about the blind areas of daily simple calculations.
+
 ---
