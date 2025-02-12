@@ -4,8 +4,8 @@ Name:wenxuan yang
 Github Account name:ikemaugust96
 
 Link to Assignment on Github: (copy and paste the link to your assignment repo here)
-[
-](https://github.com/5004-SEA-Fa24-Geeng/payroll-gen-ikemaugust96)
+
+https://github.com/5004-SEA-Fa24-Geeng/payroll-gen-ikemaugust96
 
 
 How many hours did it take you to complete this assignment (estimate)?
