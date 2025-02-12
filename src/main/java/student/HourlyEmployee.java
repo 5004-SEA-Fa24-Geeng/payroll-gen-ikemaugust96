@@ -201,19 +201,31 @@ public class HourlyEmployee implements IEmployee, IPayStub {
     }
 
 
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * Returns the net pay for the current payroll period.
+     *
+     * @return the net pay amount
+     */
     @Override
     public double getPay() {
         return netPay;  // Return the calculated net pay
     }
 
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * Returns the taxes paid for the current payroll period.
+     *
+     * @return the amount of taxes paid
+     */
     @Override
     public double getTaxesPaid() {
         return netPay * 0.2265;  // Returns taxes paid (22.65% of net pay)
     }
 
-    @SuppressWarnings("checkstyle:Indentation")
+    /**
+     * Returns a CSV-formatted string representing this pay stub.
+     *
+     * @return a formatted CSV string with pay stub details
+     */
     @Override
     public String toCSV() {
         return String.format("HOURLY,%s,%s,%s,%s,%s,%s",
